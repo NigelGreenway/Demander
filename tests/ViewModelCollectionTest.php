@@ -41,10 +41,10 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         ];
 
         $this->collection = new EmployeesViewModelCollection(
-            [],
             0,
             0,
-            count($this->employees)
+            count($this->employees),
+            []
         );
     }
 
