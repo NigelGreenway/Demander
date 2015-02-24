@@ -8,3 +8,4 @@ All Notable changes to `NigelGreenway/Demander` will be documented in this file
 - Added `interfaces` for `Query`, `QueryHandler` and `QueryMediator`.
 - Added Core components: `ViewModel` and `InMemoryMediator` with exceptions.
 - Added start of PHP Unit tests
+- Added simple demo
