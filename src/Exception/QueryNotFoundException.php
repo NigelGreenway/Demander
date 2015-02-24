@@ -12,7 +12,6 @@ namespace Demander\Exception;
 
 use Exception;
 
-
 /**
  * Exception to warn that the given key for the given class
  * parameter does not exist.

@@ -14,7 +14,6 @@ use Demander\Exception\ClassParameterNameDoesNotExistException;
 use JsonSerializable;
 use ReflectionClass;
 
-
 /**
  * Abstract class for ViewModel Model
  *

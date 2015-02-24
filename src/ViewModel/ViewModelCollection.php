@@ -13,7 +13,6 @@ namespace Demander\ViewModel;
 use Doctrine\Common\Collections\ArrayCollection;
 use JsonSerializable;
 
-
 /**
  * A collection of View Models
  *
@@ -45,16 +44,16 @@ class ViewModelCollection extends ArrayCollection implements JsonSerializable
     /**
      * Class Constructor
      *
-     * @param array $elements
      * @param $offset
      * @param $limit
      * @param $totalCount
+     * @param array $elements
      */
     public function __construct(
-        array $elements = [],
         $offset,
         $limit,
-        $totalCount
+        $totalCount,
+        array $elements = []
     ) {
         $this->elements   = $elements;
         $this->offset     = (int) $offset;
