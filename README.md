@@ -1,7 +1,7 @@
 # demander
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/nigelgreenway/demander/master.svg?style=flat-square)](https://travis-ci.org/nigelgreenway/demander)
+[![Build Status](https://img.shields.io/travis/NigelGreenway/Demander/master.svg?style=flat-square)](https://travis-ci.org/NigelGreenway/Demander)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
