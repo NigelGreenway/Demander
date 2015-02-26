@@ -1,5 +1,6 @@
 # demander
 
+[![Latest Version](https://img.shields.io/github/release/NigelGreenway/Demander.svg?style=flat-square)](https://github.com/NigelGreenway/Demander/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/NigelGreenway/Demander/master.svg?style=flat-square)](https://travis-ci.org/NigelGreenway/Demander)
 
