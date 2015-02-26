@@ -9,3 +9,4 @@ All Notable changes to `NigelGreenway/Demander` will be documented in this file
 - Added Core components: `ViewModel` and `InMemoryMediator` with exceptions.
 - Added start of PHP Unit tests
 - Added simple demo
+- Added Travis-CI to package
