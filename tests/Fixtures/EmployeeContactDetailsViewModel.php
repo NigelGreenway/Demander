@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Nigel
- * Date: 24/02/2015
- * Time: 16:34
+ * This file is part of the nigelgreenway/demander package.
+ *
+ * (c) Nigel Greenway <nigel_greenway@me.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Demander\Tests\Fixtures;
