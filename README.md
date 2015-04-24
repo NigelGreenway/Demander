@@ -12,7 +12,7 @@ PSRs you support to avoid any confusion with users and contributors.
 Via Composer
 
 ``` bash
-$ composer require league/demander
+$ composer require nigelgreenway/demander
 ```
 
 ## Usage
