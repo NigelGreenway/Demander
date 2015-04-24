@@ -25,7 +25,7 @@ $mapping = [
     'GetActiveEmployeesQuery' => 'GetActiveEmployeesQueryHandler',
 ];
 
-$mediator = new NigelGreenway\Demander($mapping);
+$mediator = new Demander\Mediator\InMemoryMediator($mapping);
 
 $activeEmployees = $mediator->request(new GetEmployeesByStatusQuery('active'));
 
