@@ -16,8 +16,6 @@ use Demander\Exception\CommandNotFoundException;
 use Demander\Exception\QueryNotFoundException;
 use Demander\QueryInterface;
 use Demander\QueryMediatorInterface;
-use Demander\ViewModel\AbstractViewModel;
-use Demander\ViewModel\ViewModelCollection;
 
 /**
  * Class InMemoryMediator
