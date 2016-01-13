@@ -2,7 +2,7 @@
 /**
  * This file is part of the nigelgreenway/demander package.
  *
- * (c) Nigel Greenway <nigel_greenway@me.com>
+ * (c) Nigel Greenway <github@futurepixels.co.uk>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,7 @@ use JsonSerializable;
  * A collection of View Models
  *
  * @package Demander\ViewModel
- * @author  Nigel Greenway <nigel_greenway@me.com>
+ * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 class ViewModelCollection implements JsonSerializable
 {

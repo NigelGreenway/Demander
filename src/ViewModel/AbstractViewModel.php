@@ -2,7 +2,7 @@
 /**
  * This file is part of the nigelgreenway/demander package.
  *
- * (c) Nigel Greenway <nigel_greenway@me.com>
+ * (c) Nigel Greenway <github@futurepixels.co.uk>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,7 +17,7 @@ use ReflectionClass;
  * Abstract class for ViewModel Model
  *
  * @package Demander
- * @author  Nigel Greenway <nigel_greenway@me.com>
+ * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 abstract class AbstractViewModel implements JsonSerializable
 {
