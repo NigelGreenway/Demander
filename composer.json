@@ -4,7 +4,7 @@
     "keywords": ["Query Bus", "Query", "View", "View Model", "Command Bus", "Command", "Mediator"],
     "minimum-stability": "stable",
     "license": "MIT",
-    "version": "v0.0.1a",
+    "version": "v1.0.0",
     "authors": [
         {
             "name": "Nigel Greenway",
