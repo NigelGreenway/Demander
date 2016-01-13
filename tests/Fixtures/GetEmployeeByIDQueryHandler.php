@@ -12,6 +12,6 @@ class GetEmployeeByIDQueryHandler implements QueryHandlerInterface
     {
         $inMemoryEmployeeRepository = new InMemoryEmployeeRepository;
 
-        return $inMemoryEmployeeRepository->findByID($query->id);
+        return $inMemoryEmployeeRepository->findByID($query->id());
     }
 }

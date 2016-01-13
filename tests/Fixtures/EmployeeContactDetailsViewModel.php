@@ -13,8 +13,20 @@ use Demander\ViewModel\AbstractViewModel;
 
 class EmployeeContactDetailsViewModel extends AbstractViewModel
 {
-    public $id;
-    public $fullName;
-    public $emailAddress;
-    public $contactNumber;
+    private $id;
+    private $fullName;
+    private $emailAddress;
+    private $contactNumber;
+
+    public function __construct(
+        $id,
+        $fullName,
+        $emailAddress,
+        $contactNumber
+    ) {
+        $this->id            = $id;
+        $this->fullName      = $fullName;
+        $this->emailAddress  = $emailAddress;
+        $this->contactNumber = $contactNumber;
+    }
 }

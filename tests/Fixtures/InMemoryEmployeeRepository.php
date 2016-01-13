@@ -30,11 +30,11 @@ class InMemoryEmployeeRepository
     {
         $employee = $this->data[$id];
 
-        return new EmployeeContactDetailsViewModel([
-            'id'            => $employee['id'],
-            'fullName'      => $employee['full_name'],
-            'emailAddress'  => $employee['email_address'],
-            'contactNumber' => $employee['contact_number'],
-        ]);
+        return new EmployeeContactDetailsViewModel(
+            $employee['id'],
+            $employee['full_name'],
+            $employee['email_address'],
+            $employee['contact_number']
+        );
     }
 }

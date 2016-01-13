@@ -7,10 +7,15 @@ use Demander\QueryInterface;
 
 class GetEmployeeByIDQuery implements QueryInterface
 {
-    public $id;
+    private $id;
 
     public function __construct($id)
     {
         $this->id = $id;
+    }
+
+    public function id()
+    {
+        return $this->id;
     }
 }

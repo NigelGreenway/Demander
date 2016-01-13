@@ -10,7 +10,6 @@
 
 namespace Demander\ViewModel;
 
-use Demander\Exception\ClassParameterNameDoesNotExistException;
 use JsonSerializable;
 use ReflectionClass;
 
@@ -22,35 +21,14 @@ use ReflectionClass;
  */
 abstract class AbstractViewModel implements JsonSerializable
 {
-
     /**
-     * ViewModel Constructor
+     * JSON Serialize object
      *
-     * @param array $viewData The data to be binded to the ViewModel
-     */
-    public function __construct(
-        array $viewData = []
-    ) {
-        foreach ($viewData as $key => $value) {
-            if (property_exists($this, $key)) {
-                $this->$key = $value;
-            } else {
-                throw new ClassParameterNameDoesNotExistException(
-                    $key,
-                    get_class($this)
-                );
-            }
-        }
-    }
-
-    /**
-     * Serialize object
-     *
-     * @return array
+     * @return string
      */
     public function jsonSerialize()
     {
-        return $this->toArray();
+        return json_encode($this->toArray());
     }
 
     /**
@@ -65,6 +43,7 @@ abstract class AbstractViewModel implements JsonSerializable
         $reflection = new ReflectionClass($this);
 
         foreach ($reflection->getProperties() as $property) {
+            $property->setAccessible(true);
             $data[$property->getName()] = $property->getValue($this);
         }
 

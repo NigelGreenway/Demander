@@ -9,11 +9,11 @@ use Demander\Mediator\InMemoryMediator;
 
 class InMemoryMediatorTest extends PHPUnit_Framework_TestCase
 {
-    private $mediator;
+    private static $mediator;
 
-    public function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->mediator = new InMemoryMediator([
+        static::$mediator = new InMemoryMediator([
             'Demander\Tests\Fixtures\GetEmployeeByIDQuery'         => 'Demander\Tests\Fixtures\GetEmployeeByIDQueryHandler',
             'Demander\Tests\Fixtures\GetEmployeeByDepartmentQuery' => 'Demander\Tests\Fixtures\GetEmployeeByDepartmentQueryHandler',
         ]);
@@ -23,15 +23,15 @@ class InMemoryMediatorTest extends PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf(
             'Demander\Tests\Fixtures\EmployeeContactDetailsViewModel',
-            $this->mediator->request(new GetEmployeeByIDQuery(1))
+            static::$mediator->request(new GetEmployeeByIDQuery(1))
         );
     }
 
     /**
-     * @expectedException Demander\Exception\QueryNotFoundException
+     * @expectedException \Demander\Exception\QueryNotFoundException
      */
     public function test_mediator_throws_an_exception_for_invalid_query()
     {
-        $this->mediator->request(new GetEmployeesByAgeGroupQuery(10, 19));
+        static::$mediator->request(new GetEmployeesByAgeGroupQuery(10, 19));
     }
 }

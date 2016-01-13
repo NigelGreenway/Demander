@@ -10,7 +10,6 @@
 
 namespace Demander\ViewModel;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use JsonSerializable;
 
 /**
@@ -19,56 +18,87 @@ use JsonSerializable;
  * @package Demander\ViewModel
  * @author  Nigel Greenway <nigel_greenway@me.com>
  */
-class ViewModelCollection extends ArrayCollection implements JsonSerializable
+class ViewModelCollection implements JsonSerializable
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private $elements;
 
     /**
-     * @var int
-     */
-    private $offset;
-
-    /**
-     * @var int
-     */
-    private $limit;
-
-    /**
-     * @var int
-     */
-    private $totalCount;
-
-    /**
-     * Class Constructor
+     * Constructor
      *
-     * @param $offset
-     * @param $limit
-     * @param $totalCount
      * @param array $elements
      */
     public function __construct(
-        $offset,
-        $limit,
-        $totalCount,
         array $elements = []
     ) {
-        $this->elements   = $elements;
-        $this->offset     = (int) $offset;
-        $this->limit      = (int) $limit;
-        $this->totalCount = (int) $totalCount;
+        $this->elements = $elements;
     }
 
     /**
-     * Required by ArrayAccess interface
+     * Add an element to the element stack
      *
-     * @{inheritDoc}
+     * @param $element
+     *
+     * @return void
      */
+    public function add($element)
+    {
+        $this->elements[] = $element;
+    }
+
+    /**
+     * Remove an element by the element key
+     *
+     * @param $key
+     *
+     * @return mixed
+     */
+    public function remove($key)
+    {
+        if ( ! isset($this->elements[$key]) && ! array_key_exists($key, $this->elements)) {
+            return null;
+        }
+
+        $removed = $this->elements[$key];
+        unset($this->elements[$key]);
+
+        return $removed;
+    }
+
+    /**
+     * Remove the specified element from the collection
+     *
+     * @param $element
+     *
+     * @return bool
+     */
+    public function removeElement($element)
+    {
+        $key = array_search($element, $this->elements, true);
+
+        if ($key === false) {
+            return false;
+        }
+
+        unset($this->elements[$key]);
+
+        return true;
+    }
+
+    /**
+     * Amount of elements the collection holds
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->elements);
+    }
+
+    /** @{inheritDoc} */
     public function jsonSerialize()
     {
-        return $this->toArray();
+        return json_encode($this->toArray());
     }
 
     /**

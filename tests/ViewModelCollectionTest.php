@@ -22,30 +22,27 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->employees = [
-            [
-                0 => new EmployeeContactDetailsViewModel([
-                    'id'            => 1,
-                    'fullName'      => 'Peter Griffen',
-                    'emailAddress'  => 'peter@thegriffens.com',
-                    'contactNumber' => '01234 213 232',
-                ])
-            ],
-            [
-                1 => new EmployeeContactDetailsViewModel([
-                    'id'            => 2,
-                    'fullName'      => 'Lewis Griffen',
-                    'emailAddress'  => 'lweis@thegriffens.com',
-                    'contactNumber' => '01234 213 232',
-                ])
-            ]
+            new EmployeeContactDetailsViewModel(
+                1,
+                'Peter Griffen',
+                'peter@thegriffens.com',
+                '01234 213 232'
+            ),
+            new EmployeeContactDetailsViewModel(
+                2,
+                'Lewis Griffen',
+                'lweis@thegriffens.com',
+                '01234 213 232'
+            ),
+            new EmployeeContactDetailsViewModel(
+                5,
+                'Meg Griffen',
+                'meg@thegriffens.com',
+                '01234 213 232'
+            ),
         ];
 
-        $this->collection = new EmployeesViewModelCollection(
-            0,
-            0,
-            count($this->employees),
-            []
-        );
+        $this->collection = new EmployeesViewModelCollection([]);
     }
 
     public function test_view_model_adds_correctly()
@@ -59,11 +56,34 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function test_view_model_collection_converts_to_array()
+    public function test_ViewModelCollection_removes_specified_key()
     {
-        $this->assertEquals(
-            'array',
-            gettype($this->collection->jsonSerialize())
-        );
+        $this->collection->add($this->employees[0]);
+        $this->collection->add($this->employees[1]);
+        $this->collection->add($this->employees[2]);
+
+        $removedElement = $this->collection->remove(1);
+
+        $this->assertEquals(2, $this->collection->count());
+        $this->assertEquals($this->employees[1], $removedElement);
+    }
+
+    public function test_ViewModelCollection_removes_specified_element()
+    {
+        $this->collection->add($this->employees[0]);
+        $this->collection->add($this->employees[1]);
+        $this->collection->add($this->employees[2]);
+
+        $this->collection->removeElement($this->employees[1]);
+
+        $this->assertEquals(2, $this->collection->count());
+    }
+
+    public function test_view_model_collection_converts_to_json_encoded_string()
+    {
+        $this->collection->add($this->employees[0]);
+        $this->collection->add($this->employees[1]);
+
+        $this->assertJson($this->collection->jsonSerialize());
     }
 }
