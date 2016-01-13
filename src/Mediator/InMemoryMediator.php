@@ -63,6 +63,7 @@ class InMemoryMediator implements QueryMediatorInterface, CommandMediatorInterfa
     public function execute(CommandInterface $command)
     {
         $className = get_class($command);
+
         if (array_key_exists($className, $this->commandNameToHandlersMap) === false) {
             throw new CommandNotFoundException($className);
         }
@@ -87,7 +88,8 @@ class InMemoryMediator implements QueryMediatorInterface, CommandMediatorInterfa
      *
      * @return void
      */
-    private function addCommandHandlers(array $commandNameToHandlerMap = []) {
+    private function addCommandHandlers(array $commandNameToHandlerMap = [])
+    {
         $this->commandNameToHandlersMap = $commandNameToHandlerMap;
     }
 }

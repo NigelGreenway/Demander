@@ -17,4 +17,5 @@ namespace Demander;
  * @author  Nigel Greenway <nigel_greenway@me.com>
  */
 interface CommandInterface
-{}
+{
+}

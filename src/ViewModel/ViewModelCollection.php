@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Demander\ViewModel;
 
 use JsonSerializable;
@@ -55,7 +54,10 @@ class ViewModelCollection implements JsonSerializable
      */
     public function remove($key)
     {
-        if ( ! isset($this->elements[$key]) && ! array_key_exists($key, $this->elements)) {
+        if (
+            isset($this->elements[$key]) === false
+            && array_key_exists($key, $this->elements) === false
+        ) {
             return null;
         }
 
