@@ -19,11 +19,11 @@ namespace Demander;
 interface CommandMediatorInterface
 {
     /**
-     * Dispatch a command
+     * Execute a command
      *
      * @param CommandInterface $command
      *
      * @return void
      */
-    public function request(CommandInterface $command);
+    public function execute(CommandInterface $command);
 }
