@@ -8,11 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Demander\Tests\Fixtures;
+namespace Demander;
 
-use Demander\ViewModel\ViewModelCollection;
-
-
-class EmployeesViewModelCollection extends ViewModelCollection
+/**
+ * Interface for a Command Message
+ *
+ * @package Demander
+ * @author  Nigel Greenway <nigel_greenway@me.com>
+ */
+interface CommandInterface
 {
 }
