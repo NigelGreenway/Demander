@@ -54,10 +54,7 @@ class ViewModelCollection implements JsonSerializable
      */
     public function remove($key)
     {
-        if (
-            isset($this->elements[$key]) === false
-            && array_key_exists($key, $this->elements) === false
-        ) {
+        if (isset($this->elements[$key]) === false && array_key_exists($key, $this->elements) === false) {
             return null;
         }
 
