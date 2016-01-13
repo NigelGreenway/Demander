@@ -53,6 +53,10 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         $this->collection = new EmployeesViewModelCollection([]);
     }
 
+    /**
+     * @covers Demander\ViewModel\ViewModelCollection::add
+     * @covers Demander\ViewModel\ViewModelCollection::count
+     */
     public function test_view_model_adds_correctly()
     {
         $this->collection->add($this->employees[0]);
@@ -64,6 +68,9 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @covers Demander\ViewModel\ViewModelCollection::remove
+     */
     public function test_ViewModelCollection_removes_specified_key()
     {
         $this->collection->add($this->employees[0]);
@@ -76,6 +83,9 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($this->employees[1], $removedElement);
     }
 
+    /**
+     * @covers Demander\ViewModel\ViewModelCollection::removeElement
+     */
     public function test_ViewModelCollection_removes_specified_element()
     {
         $this->collection->add($this->employees[0]);
@@ -87,6 +97,10 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(2, $this->collection->count());
     }
 
+    /**
+     * @covers Demander\ViewModel\ViewModelCollection::jsonSerialize
+     * @covers Demander\ViewModel\ViewModelCollection::toArray
+     */
     public function test_view_model_collection_converts_to_json_encoded_string()
     {
         $this->collection->add($this->employees[0]);

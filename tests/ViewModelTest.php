@@ -15,9 +15,6 @@ use PHPUnit_Framework_TestCase;
 
 class ViewModelTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * @covers Demander\ViewModel\AbstractViewModel::__construct
-     */
     public function test_view_model_maps_correctly()
     {
         $viewModel = new EmployeeContactDetailsViewModel(

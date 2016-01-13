@@ -36,6 +36,9 @@ class InMemoryMediatorTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @covers Demander\Mediator\InMemoryMediator::request
+     */
     public function test_mediator_returns_correct_view_model()
     {
         $this->assertInstanceOf(
@@ -50,6 +53,9 @@ class InMemoryMediatorTest extends PHPUnit_Framework_TestCase
         static::$mediator->request(new GetEmployeesByAgeGroupQuery(10, 19));
     }
 
+    /**
+     * @covers Demander\Mediator\InMemoryMediator::execute
+     */
     public function test_mediator_executes_command()
     {
         $this->assertEquals(
