@@ -1,14 +1,15 @@
 {
     "name": "nigelgreenway/demander",
     "description": "A small, simple and flexible Query Bus.",
-    "keywords": ["Query Bus", "Query", "View", "View Model"],
-    "minimum-stability": "alpha",
+    "keywords": ["Query Bus", "Query", "View", "View Model", "Command Bus", "Command", "Mediator"],
+    "minimum-stability": "stable",
     "license": "MIT",
     "version": "v0.0.1a",
     "authors": [
         {
             "name": "Nigel Greenway",
-            "homepage": "http://github.com/nigelgreenway/demander"
+            "homepage": "http://github.com/nigelgreenway/demander",
+            "email": "github@futurepixels.co.uk"
         }
     ],
     "require": {
