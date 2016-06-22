@@ -77,10 +77,9 @@ class ViewModelCollectionTest extends PHPUnit_Framework_TestCase
         $this->collection->add($this->employees[1]);
         $this->collection->add($this->employees[2]);
 
-        $removedElement = $this->collection->remove(1);
+        $this->collection->remove(1);
 
         $this->assertEquals(2, $this->collection->count());
-        $this->assertEquals($this->employees[1], $removedElement);
     }
 
     /**

@@ -10,38 +10,29 @@
 namespace Demander\ViewModel;
 
 use JsonSerializable;
+use ArrayIterator;
 
 /**
  * A collection of View Models
  *
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
-class ViewModelCollection implements JsonSerializable
+class ViewModelCollection
+    extends ArrayIterator
+    implements JsonSerializable
 {
-    /** @var array */
-    private $elements;
-
-    /**
-     * Constructor
-     *
-     * @param array $elements
-     */
-    public function __construct(
-        array $elements = []
-    ) {
-        $this->elements = $elements;
-    }
-
     /**
      * Add an element to the element stack
      *
      * @param $element
      *
      * @return void
+     *
+     * @deprecated Use `#append` instead
      */
     public function add($element)
     {
-        $this->elements[] = $element;
+        $this->append($element);
     }
 
     /**
@@ -49,18 +40,13 @@ class ViewModelCollection implements JsonSerializable
      *
      * @param $key
      *
-     * @return mixed
+     * @return void
      */
     public function remove($key)
     {
-        if (isset($this->elements[$key]) === false && array_key_exists($key, $this->elements) === false) {
-            return null;
+        if ($this->offsetExists($key) === true) {
+            $this->offsetUnset($key);
         }
-
-        $removed = $this->elements[$key];
-        unset($this->elements[$key]);
-
-        return $removed;
     }
 
     /**
@@ -68,32 +54,24 @@ class ViewModelCollection implements JsonSerializable
      *
      * @param $element
      *
-     * @return bool
+     * @return void
      */
     public function removeElement($element)
     {
-        $key = array_search($element, $this->elements, true);
+        $storage = $this->getArrayCopy();
 
-        if ($key === false) {
-            return false;
+        $key = array_search($element, $storage, true);
+
+        if ($key !== false) {
+            $this->offsetUnset($key);
         }
-
-        unset($this->elements[$key]);
-
-        return true;
     }
 
     /**
-     * Amount of elements the collection holds
+     * @inheritDoc
      *
-     * @return int
+     * @deprecated Not used anymore
      */
-    public function count()
-    {
-        return count($this->elements);
-    }
-
-    /** @{inheritDoc} */
     public function jsonSerialize()
     {
         return json_encode($this->toArray());
@@ -103,9 +81,11 @@ class ViewModelCollection implements JsonSerializable
      * Returns the array of elements
      *
      * @return array
+     *
+     * @deprecated Use `#getArrayCopy` instead
      */
     public function toArray()
     {
-        return $this->elements;
+        return $this->getArrayCopy();
     }
 }
