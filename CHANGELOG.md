@@ -2,6 +2,10 @@
 
 All Notable changes to `NigelGreenway/Demander` will be documented in this file
 
+## 1.0.0 - 2016-01-13
+
+_Not sure as I forgot to update the changelog document
+
 ## 0.0.1a - 2015-02-24
 
 ### Added
