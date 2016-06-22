@@ -16,7 +16,6 @@ use ReflectionClass;
 /**
  * Abstract class for ViewModel Model
  *
- * @package Demander
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 abstract class AbstractViewModel implements JsonSerializable

@@ -16,7 +16,6 @@ use Exception;
  * Exception to warn that the given key for the given class
  * parameter does not exist.
  *
- * @package Demander\Exception
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 final class QueryNotFoundException extends Exception

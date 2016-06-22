@@ -14,7 +14,6 @@ use JsonSerializable;
 /**
  * A collection of View Models
  *
- * @package Demander\ViewModel
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 class ViewModelCollection implements JsonSerializable
