@@ -29,9 +29,12 @@ final class EmployeeViewModel extends \Demander\ViewModel\AbstractViewModel
     public $emailAddress;
 }
 
-$mediator = new \Demander\Mediator\InMemoryMediator([
-    'EmployeeNameAndContactQuery' => 'EmployeeNameAndContactQueryHandler',
-]);
+$mediator = new \Demander\Mediator\InMemoryMediator(
+    [
+        'EmployeeNameAndContactQuery' => 'EmployeeNameAndContactQueryHandler',
+    ],
+    []
+);
 
 $employee = $mediator->request(new EmployeeNameAndContactQuery('10'));
 
