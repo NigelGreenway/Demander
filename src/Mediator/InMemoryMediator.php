@@ -20,7 +20,6 @@ use Demander\QueryMediatorInterface;
 /**
  * Class InMemoryMediator
  *
- * @package Demander\Mediator
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 class InMemoryMediator implements QueryMediatorInterface, CommandMediatorInterface

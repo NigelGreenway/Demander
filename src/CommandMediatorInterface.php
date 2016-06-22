@@ -13,7 +13,6 @@ namespace Demander;
 /**
  * Interface for the command mediator
  *
- * @package Demander
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 interface CommandMediatorInterface

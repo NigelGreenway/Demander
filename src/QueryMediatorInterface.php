@@ -13,7 +13,6 @@ namespace Demander;
 /**
  * Interface for the query mediator
  *
- * @package Demander
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 interface QueryMediatorInterface

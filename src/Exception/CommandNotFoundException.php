@@ -26,9 +26,9 @@ final class CommandNotFoundException extends Exception
      */
     public function __construct($unknownQuery)
     {
-        return parent::__construct(
+        parent::__construct(
             sprintf(
-                'Sorry, but it the Query [%s] does not exist in your mapping config.',
+                'Sorry, but the Query [%s] does not exist in your mapping config.',
                 $unknownQuery
             )
         );

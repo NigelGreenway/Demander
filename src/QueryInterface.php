@@ -13,7 +13,6 @@ namespace Demander;
 /**
  * Interface for a Query Message
  *
- * @package Demander
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
 interface QueryInterface
