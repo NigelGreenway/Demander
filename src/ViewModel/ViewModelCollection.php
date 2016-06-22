@@ -17,9 +17,7 @@ use ArrayIterator;
  *
  * @author  Nigel Greenway <github@futurepixels.co.uk>
  */
-class ViewModelCollection
-    extends ArrayIterator
-    implements JsonSerializable
+class ViewModelCollection extends ArrayIterator implements JsonSerializable
 {
     /**
      * Add an element to the element stack
